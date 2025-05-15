@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "prepare": "husky install",
+    "cy:open": "npm cypress open",
+    "cy:run": "npm cypress run --headless -b chrome ",
+    "report:regenerateDiffFolder": "cypress-image-diff -u",
+    "report:generate": "cypress-image-diff-html-report generate --rd=visual-test-report",
+    "report:start": "cypress-image-diff-html-report start --rd=visual-test-report --serverPort 8080 --autoOpen",
+    "view-test": "cypress-image-diff-html-report start --autoOpen",
+    "cy:specs": "npm cy:ci -s",
+    "lint": "tslint '*.ts' '**/**/*spec.ts'",
+    "lint-fix": "tsc --noemit && eslint --fix cypress && prettier --write cypress"
+  },
+  "dependencies": {
+    "cypress": "^14.3.3",
+    "cypress-image-diff-html-report": "^2.2.0",
+    "cypress-image-diff-js": "^2.4.0"
+  }
+}
